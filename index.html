@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Antenna Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <h1>Smart Antenna Simulator</h1>
+
+    <div id="antenna-container">
+        <div id="threejs-container"></div>
+    </div>
+
+    <div class="controls">
+        <label for="antennaType">Select Antenna Type:</label>
+        <select id="antennaType">
+            <option value="dipole">Dipole</option>
+            <option value="helical">Helical</option>
+            <option value="yagi">Yagi-Uda</option>
+        </select>
+
+        <label for="frequency">Frequency (GHz):</label>
+        <input type="number" id="frequency" value="2.4">
+
+        <label for="length">Antenna Length (cm):</label>
+        <input type="number" id="length" value="10">
+
+        <button onclick="simulateAntenna()">Simulate</button>
+    </div>
+
+    <div id="parameters">
+        <h2>Computed Parameters</h2>
+        <p><strong>Gain:</strong> <span id="gainValue">-</span> dB</p>
+        <p><strong>Beamwidth:</strong> <span id="beamwidthValue">-</span> degrees</p>
+        <p><strong>Directivity:</strong> <span id="directivityValue">-</span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
